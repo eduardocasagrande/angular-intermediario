@@ -1,11 +1,15 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = function ($scope) {
+    $scope.nome = "---AngularJS Intermediario---";
+}
+},{}],2:[function(require,module,exports){
 require('angular');
 
+let appCtrl = require('./controllers/appCtrl');
+
 angular.module('app',[]);
-angular.module('app').controller('appCtrl',function ($scope) {
-    $scope.nome = "AngularJS Intermediario";
-});
-},{"angular":3}],2:[function(require,module,exports){
+angular.module('app').controller('appCtrl',['$scope',appCtrl]);
+},{"./controllers/appCtrl":1,"angular":4}],3:[function(require,module,exports){
 /**
  * @license AngularJS v1.6.9
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -34365,8 +34369,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":2}]},{},[1])
+},{"./angular":3}]},{},[2])

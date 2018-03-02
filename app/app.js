@@ -1,6 +1,6 @@
 require('angular');
 
-var appCtroller = require('./controller/appController')
+let appCtrl = require('./controllers/appCtrl');
 
 angular.module('app',[]);
-angular.module('app').controller('appController',['$scope',appController]);
+angular.module('app').controller('appCtrl',['$scope',appCtrl]);
