@@ -30,3 +30,4 @@ gulp.task('browserify', function(){
         .pipe(rename("main.js"))
         .pipe(gulp.dest('public/js/'));
 });
+
