@@ -58,7 +58,7 @@ function conn(){
 
 function save($data){
     $db = conn();
-    $query = "Insert into `client` (`name`,`tel`,`address`) values (:name,:tel,:address)";
+    $query = "Insert into client (`name`,`tel`,`address`) values (:name,:tel,:address)";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':name',$data->name);
     $stmt->bindValue(':tel',$data->tel);
@@ -69,7 +69,7 @@ function save($data){
 
 function update($data){
     $db = conn();
-    $query = "UPDATE `client` SET `name`=:name,`tel`=:tel,`address`=:address WHERE `id`=:id;";
+    $query = "UPDATE client SET `name`=:name,`tel`=:tel,`address`=:address WHERE `id`=:id;";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':id',$data->id);
     $stmt->bindValue(':name',$data->name);
@@ -80,7 +80,7 @@ function update($data){
 
 function delete($id){
     $db = conn();
-    $query = "DELETE FROM `client` WHERE `id`=:id;";
+    $query = "DELETE FROM client WHERE `id`=:id;";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':id',$id);
     return $stmt->execute();
@@ -88,7 +88,7 @@ function delete($id){
 
 function listAll(){
     $db = conn();
-    $query = "Select * from `client` order by `id` DESC";
+    $query = "Select * from client order by `id` DESC";
     $stmt = $db->prepare($query);
     $stmt->execute();
     return $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -96,7 +96,7 @@ function listAll(){
 
 function find($id){
     $db = conn();
-    $query = "Select * from `client` where id=:id";
+    $query = "Select * from client where id=:id";
     $stmt = $db->prepare($query);
     $stmt->bindValue(':id',$id);
     $stmt->execute();
