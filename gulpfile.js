@@ -9,7 +9,7 @@ gulp.task('default', ['browserify','watch','serve']);
 
 gulp.task('watch', function() {
     gulp.watch('app/**/*.js', ['browserify']);
-});
+});''
 
 gulp.task('serve', function() {
     var serve = server.static('./public', 8000);
